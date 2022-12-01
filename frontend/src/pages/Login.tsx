@@ -30,7 +30,7 @@ function Login() {
     <div className="App">
       <div>
         <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Logo to be defined" />
+          <img src="/vite.svg" className="logo" alt="Vite logo" />
         </a>
       </div>
       <h1>Idea blocks</h1>
@@ -39,8 +39,8 @@ function Login() {
           <input onChange={ (e) => setUsername(e.target.value) } type="text" placeholder="Username"/>
           <input onChange={ (e) => setPassword(e.target.value) } type="password" placeholder="••••••••"/>
           <div className="buttons">
-            <button type="submit">Login</button> 
             <button onClick={ () => navigate('/register') }>Register</button>
+            <button type="submit">Login</button> 
           </div>
         </form>
       </div>

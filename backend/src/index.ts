@@ -1,8 +1,8 @@
 import express from 'express';
 import {verify} from 'jsonwebtoken';
 import cors from 'cors';
-import swaggerUi from 'swagger-ui-express';
-import swaggerDocument from './swagger.json';
+import swaggerUi from 'swagger-ui-express'
+import swaggerDocument from './swagger.json'
 import * as user from './controller/user';
 import * as ideaBlock from './controller/ideablock';
 import * as ideaBlockText from './controller/ideablockstext';
@@ -16,7 +16,7 @@ app.use(
     credentials: true,
     methods: '*',
     origin: true,
-  })
+  }),
 );
 
 // Swagger

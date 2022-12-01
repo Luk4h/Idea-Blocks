@@ -1,7 +1,6 @@
-import { useContext, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useAuth } from '../context/Auth'
 import { useNavigate } from 'react-router-dom'
-import { useBlock } from '../context/Block';
 
 function Login() {
   const [blocks, setBlocks] = useState<any>();
@@ -9,7 +8,6 @@ function Login() {
   const [isCreatingNewBlock, setCreatingNewBlock] = useState<boolean>();
   const [blockname, setBlockname] = useState<string>();
   const [blockdescription, setBlockdescription] = useState<string>();
-  const {block, setBlock} = useBlock();
   const { token } = useAuth();
   let navigate = useNavigate();
 
@@ -19,7 +17,7 @@ function Login() {
       headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token}
     }
     const fetchData = async () => {
-      const result = await fetch('https://idea-blocks.cyclic.app/blocks', options)
+      const result = await fetch('http://192.168.1.7:8181/blocks', options)
       if ( result.status === 200 ) {
         setBlocks( await result.json())
       } else {
@@ -39,7 +37,7 @@ function Login() {
     }
 
     const fetchData = async () => {
-      const result = await fetch('https://idea-blocks.cyclic.app/blocks', options)
+      const result = await fetch('http://192.168.1.7:8181/blocks', options)
       console.log(result)
       if ( result.status === 200 ) {
         setCreatingNewBlock(!isCreatingNewBlock)
@@ -52,7 +50,6 @@ function Login() {
   }
 
   return (
-
     <div className="App">
       <h1 className='Header'>Your blocks</h1>
       <div className='BodyList'>
@@ -69,7 +66,7 @@ function Login() {
         <> {
         blocks && blocks.map((block: any) => 
           (
-          <div className='Block' id={block.ID_BLOCK} onClick={() => {setBlock(block); navigate('/block/'+block.ID_BLOCK)}}>
+          <div className='Block' id={block.ID_BLOCK} onClick={() => navigate('/block/'+block.ID_BLOCK)}>
             <h4>{block.TITLE_BLOCK}</h4>
             <p>{block.DESCRIPTION_BLOCK}</p>
           </div>
