@@ -17,7 +17,7 @@ function Login() {
       headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token}
     }
     const fetchData = async () => {
-      const result = await fetch('http://192.168.1.7:8181/blocks', options)
+      const result = await fetch('http://localhost:8181/blocks', options)
       if ( result.status === 200 ) {
         setBlocks( await result.json())
       } else {
@@ -37,7 +37,7 @@ function Login() {
     }
 
     const fetchData = async () => {
-      const result = await fetch('http://192.168.1.7:8181/blocks', options)
+      const result = await fetch('http://localhost:8181/blocks', options)
       console.log(result)
       if ( result.status === 200 ) {
         setCreatingNewBlock(!isCreatingNewBlock)
