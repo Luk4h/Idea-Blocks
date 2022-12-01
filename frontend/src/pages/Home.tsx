@@ -19,7 +19,7 @@ function Login() {
       headers: {'Content-Type': 'application/json', 'Authorization': 'Bearer ' + token}
     }
     const fetchData = async () => {
-      const result = await fetch('http://localhost:8181/blocks', options)
+      const result = await fetch('https://idea-blocks.cyclic.app/blocks', options)
       if ( result.status === 200 ) {
         setBlocks( await result.json())
       } else {
@@ -39,7 +39,7 @@ function Login() {
     }
 
     const fetchData = async () => {
-      const result = await fetch('http://localhost:8181/blocks', options)
+      const result = await fetch('https://idea-blocks.cyclic.app/blocks', options)
       console.log(result)
       if ( result.status === 200 ) {
         setCreatingNewBlock(!isCreatingNewBlock)

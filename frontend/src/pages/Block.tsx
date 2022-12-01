@@ -19,7 +19,7 @@ export const BlockEditor = () => {
             body: JSON.stringify({"textId": block.ID_TEXT_BLOCK})
         }
         const fetchData = async () => {
-            const result = await fetch('http://localhost:8181/texts', options)
+            const result = await fetch('https://idea-blocks.cyclic.app/texts', options)
             if ( result.status === 200 ) {
                 setText( (await result.json()).blockText)
             } else {
@@ -36,7 +36,7 @@ export const BlockEditor = () => {
           body: JSON.stringify({"textId": block.ID_TEXT_BLOCK, "textBody": text})
       }
       const fetchData = async () => {
-          const result = await fetch('http://localhost:8181/texts', options)
+          const result = await fetch('https://idea-blocks.cyclic.app/texts', options)
           if ( result.status === 200 ) {
               console.log('Saved')
           } else {
@@ -53,7 +53,7 @@ export const BlockEditor = () => {
           body: JSON.stringify({"blockId": block.ID_BLOCK, "blockTitle": block.TITLE_BLOCK})
       }
       const fetchData = async () => {
-          const result = await fetch('http://localhost:8181/blocks', options)
+          const result = await fetch('https://idea-blocks.cyclic.app/blocks', options)
           if ( result.status === 200 ) {
               console.log('Deleted');
               navigate('/home');

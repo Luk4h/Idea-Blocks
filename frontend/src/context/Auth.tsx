@@ -23,7 +23,7 @@ const AuthProvider = ({ children }: any) => {
              headers: {'Content-Type': 'application/json'}
            };
 
-         const response = await fetch('http://localhost:8181' + '/signin', options)
+         const response = await fetch('https://idea-blocks.cyclic.app' + '/signin', options)
 
          if (response.status == 200 ) {
             var data:{"accessToken":string} = await response.json();
@@ -43,7 +43,7 @@ const AuthProvider = ({ children }: any) => {
             headers: {'Content-Type': 'application/json'}
         };
 
-        const response = await fetch('http://localhost:8181' + '/signup', options)
+        const response = await fetch('https://idea-blocks.cyclic.app' + '/signup', options)
         if (response.status == 200 ) {
             return signIn(username, password);
         } else {
