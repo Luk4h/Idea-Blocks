@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { useAuth } from '../context/Auth'
 import { useNavigate } from 'react-router-dom'
+import { useBlock } from '../context/Block';
 
 function Login() {
   const [blocks, setBlocks] = useState<any>();
@@ -8,6 +9,7 @@ function Login() {
   const [isCreatingNewBlock, setCreatingNewBlock] = useState<boolean>();
   const [blockname, setBlockname] = useState<string>();
   const [blockdescription, setBlockdescription] = useState<string>();
+  const {block, setBlock} = useBlock();
   const { token } = useAuth();
   let navigate = useNavigate();
 
@@ -50,6 +52,7 @@ function Login() {
   }
 
   return (
+
     <div className="App">
       <h1 className='Header'>Your blocks</h1>
       <div className='BodyList'>
@@ -66,7 +69,7 @@ function Login() {
         <> {
         blocks && blocks.map((block: any) => 
           (
-          <div className='Block' id={block.ID_BLOCK} onClick={() => navigate('/block/'+block.ID_BLOCK)}>
+          <div className='Block' id={block.ID_BLOCK} onClick={() => {setBlock(block); navigate('/block/'+block.ID_BLOCK)}}>
             <h4>{block.TITLE_BLOCK}</h4>
             <p>{block.DESCRIPTION_BLOCK}</p>
           </div>
