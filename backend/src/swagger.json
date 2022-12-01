@@ -1,0 +1,452 @@
+{
+    "info": {
+        "description": "Create notepads for your amazing ideas!",
+        "title": "Ideablocks",
+        "version": "1.0.0"
+    },
+    "openapi": "3.0.0",
+    "paths": {
+        "localhost:8181/account": {
+            "delete": {
+                "description": "Deleta uma conta de usuario",
+                "parameters": [
+                    {
+                        "description": "",
+                        "in": "header",
+                        "name": "Content-Type",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Usuário",
+                        "in": "body",
+                        "name": "username",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Nome completo",
+                        "in": "body",
+                        "name": "fullName",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Senha",
+                        "in": "body",
+                        "name": "password",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Authorization header",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "Delete account",
+                "tags": [
+                    "Account"
+                ]
+            },
+            "get": {
+                "description": "",
+                "parameters": [
+                    {
+                        "description": "Authorization header",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "Account",
+                "tags": [
+                    "Account"
+                ]
+            },
+            "put": {
+                "description": "",
+                "parameters": [
+                    {
+                        "description": "",
+                        "in": "header",
+                        "name": "Content-Type",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Usuário",
+                        "in": "body",
+                        "name": "username",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Nome completo",
+                        "in": "body",
+                        "name": "fullName",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Senha",
+                        "in": "body",
+                        "name": "password",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Authorization header",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "Change password",
+                "tags": [
+                    "Account"
+                ]
+            }
+        },
+        "localhost:8181/blocks": {
+            "delete": {
+                "description": "",
+                "parameters": [
+                    {
+                        "description": "",
+                        "in": "header",
+                        "name": "Content-Type",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Id do bloco",
+                        "in": "body",
+                        "name": "blockId",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Titúlo do bloco",
+                        "in": "body",
+                        "name": "blockTitle",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Authorization header",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "Delete Ideablock",
+                "tags": [
+                    "Ideablock"
+                ]
+            },
+            "get": {
+                "parameters": [
+                    {
+                        "description": "Authorization header",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+				],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "View Ideablocks",
+                "tags": [
+                    "Ideablock"
+                ]
+            },
+            "put": {
+                "description": "",
+                "parameters": [
+                    {
+                        "description": "",
+                        "in": "header",
+                        "name": "Content-Type",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Id do bloco",
+                        "in": "body",
+                        "name": "blockId",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Titúlo do bloco",
+                        "in": "body",
+                        "name": "blockTitle",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Descrição do bloco",
+                        "in": "body",
+                        "name": "blockDescription",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Authorization header",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "Rename Ideablock",
+                "tags": [
+                    "Ideablock"
+                ]
+            }
+        },
+        "localhost:8181/signup": {
+            "post": {
+                "description": "",
+                "parameters": [
+                    {
+                        "description": "",
+                        "in": "header",
+                        "name": "Content-Type",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Usuário",
+                        "in": "body",
+                        "name": "username",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Nome completo",
+                        "in": "body",
+                        "name": "fullName",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Senha",
+                        "in": "body",
+                        "name": "password",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "Signup",
+                "tags": [
+                    "Account"
+                ]
+            }
+        },
+        "localhost:8181/signin": {
+            "post": {
+                "description": "",
+                "parameters": [
+                    {
+                        "description": "",
+                        "in": "header",
+                        "name": "Content-Type",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Usuário",
+                        "in": "body",
+                        "name": "username",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Senha",
+                        "in": "body",
+                        "name": "password",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "Signin",
+                "tags": [
+                    "Account"
+                ]
+            }
+        },
+        "localhost:8181/texts": {
+            "put": {
+                "description": "",
+                "parameters": [
+                    {
+                        "description": "",
+                        "in": "header",
+                        "name": "Content-Type",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Id do texto",
+                        "in": "body",
+                        "name": "textId",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Conteúdo do texto",
+                        "in": "body",
+                        "name": "textBody",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "description": "Authorization header",
+                        "in": "header",
+                        "name": "Authorization",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                },
+                "summary": "Edit ideaBlockText",
+                "tags": [
+                    "IdeablockText"
+                ]
+            }
+        }
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8181/"
+        }
+    ],
+    "tags": [
+        {
+            "description": "",
+            "name": "Account"
+        },
+        {
+            "description": "",
+            "name": "Ideablock"
+        },
+        {
+            "description": "",
+            "name": "IdeablockText"
+        }
+    ]
+}
